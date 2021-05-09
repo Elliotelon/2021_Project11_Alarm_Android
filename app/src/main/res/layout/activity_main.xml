@@ -4,15 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/background_black">
+
+    <View
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/onOffButton"
+        app:layout_constraintDimensionRatio="H, 1:1"
+        android:background="@drawable/background_white_ring"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
 
     <TextView
+        android:id="@+id/timeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="9:30"
+        android:textSize="50sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/ampmTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/ampmTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AM"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/onOffButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timeTextView" />
+
+    <Button
+        android:id="@+id/onOffButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/on_alarm"
+        app:layout_constraintBottom_toTopOf="@id/changeAlarmTimeButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/changeAlarmTimeButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/change_time"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
